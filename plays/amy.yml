@@ -1,0 +1,14 @@
+---
+
+- name: amy.yml | Configures amy with stuff
+  hosts: amy
+  sudo: True
+
+  roles:
+    - { role: common,                   tags: ["common"] }
+    - { role: ANXS.postgresql,          tags: ["spotweb"] }
+
+    #- { role: plexconnect,          tags: ["plex"] }
+    #- { role: plex-server,          tags: ["plex"] }
+    #- { role: samba-server,         tags: ["plex"] }
+

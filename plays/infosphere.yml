@@ -1,0 +1,10 @@
+---
+
+- name: Configure infosphere with stuff
+  hosts: infosphere
+  sudo: True
+  roles:
+    - { role: common, tags: ["common"] }
+    - { role: printer, tags: ["printer"] }
+    #- { role: deluged, tags: ["downloader"] }
+    #- { role: nzbget, tags: ["downloader"] }
