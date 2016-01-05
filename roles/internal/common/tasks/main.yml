@@ -8,17 +8,20 @@
 - name: apt-get update
   apt: update_cache=yes
 
-- name: Enable https for apt-get
-  apt: pkg=apt-transport-https state=latest
-
-- name: Install tzdata
-  apt: pkg=tzdata state=latest
-
-- name: Install unrar
-  apt: pkg=unrar state=latest
-
-- name: Install sshfs
-  apt: pkg=sshfs state=latest
+- name: install packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+   - apt-transport-https
+   - tzdata
+   - unrar
+   - sshfs
+   - curl
+   - multitail
+   - mtr
+   - socat
+   - tmux
+   - apticron
+   - screen
 
 - name: Upgrade all packages
   apt: upgrade=yes
