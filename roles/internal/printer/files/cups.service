@@ -1,0 +1,14 @@
+[Unit]
+Description=CUPS Printing Service
+Documentation=man:cupsd(8) man:cupsd.conf(5)
+Requires=cups.socket
+After=local-fs.target remote-fs.target network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/sbin/cupsd -f
+PrivateTmp=true
+
+[Install]
+Also=cups.socket cups.path
+WantedBy=multi-user.target

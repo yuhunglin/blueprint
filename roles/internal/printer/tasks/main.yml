@@ -1,0 +1,26 @@
+---
+- name: apt-get update if the last one is more than 3600 seconds ago
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: Install cups
+  apt: name=cups state=latest
+
+- name: Install cups-client
+  apt: name=cups-client state=latest
+
+- name: Install printer-driver-gutenprint
+  apt: name=printer-driver-gutenprint state=latest
+
+- name: Install cupsd.conf
+  template: src=cupsd.conf.j2 dest=/etc/cups/cupsd.conf
+
+- name: Install cups-filters.conf
+  template: src=cups-filters.conf.j2 dest=/etc/modules-load.d/cups-filters.conf
+
+- name: Install cups systemd service
+  copy: src=cups.service dest=/etc/systemd/system/cups.service mode=0755
+  register: cups_service
+  notify:
+    - reload cups_service
+    - restart cups_service
+

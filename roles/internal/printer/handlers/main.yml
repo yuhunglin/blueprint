@@ -1,0 +1,7 @@
+---
+- name: reload cups_service
+  shell: systemctl daemon-reload
+  when: cups_service.changed
+
+- name: restart cups_service
+  service: name=cups.service state=restarted
