@@ -1,0 +1,9 @@
+---
+dependencies:
+  - {
+      role: ANXS.utilities,
+      utilities_distribution: [ 'apticron' ],
+      tag: 'common'
+    }
+  - { role: ANXS.git, tag: 'common' }
+  - { role: ANXS.build-essential, tag: 'common' }
