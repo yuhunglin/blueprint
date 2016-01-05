@@ -1,4 +1,4 @@
 - maybe a different take on the shell scripts
 - printer role: automatically setup deskjet sharing?
   - google cloud print?
-
+- lucid chart of layout?
