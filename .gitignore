@@ -1,0 +1,4 @@
+.env
+.vpass
+.vagrant/
+roles/external/
