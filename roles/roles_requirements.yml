@@ -2,12 +2,12 @@
 - src: git+https://github.com/ANXS/postgresql.git
   version: "v1.1.1"
   name: ANXS.postgresql
-- src: git+https://github.com/ANXS/utilities.git
-  version: "v1.0.4"
-  name: ANXS.utilities
 - src: git+https://github.com/ANXS/git.git
   version: "v1.0.1"
   name: ANXS.git
 - src: git+https://github.com/ANXS/build-essential.git
   version: "v1.0.1"
   name: ANXS.build-essential
+- src: git+https://github.com/ANXS/generic-users.git
+  version: "v1.0.5"
+  name: ANXS.generic-users
