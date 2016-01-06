@@ -21,6 +21,6 @@
   copy: src=cups.service dest=/etc/systemd/system/cups.service mode=0755
   register: cups_service
   notify:
-    - reload cups_service
-    - restart cups_service
+    - reload cups
+    - restart cups
 
