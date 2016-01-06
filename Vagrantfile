@@ -71,4 +71,5 @@ Vagrant.configure(2) do |config|
   #config.ssh.private_key_path = ENV['PRIVATE_KEY_PATH']
 
   config.vm.network "forwarded_port", guest: 631, host: 8631
+  config.vm.network "forwarded_port", guest: 8112, host: 8112
 end
