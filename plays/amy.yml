@@ -6,9 +6,10 @@
 
   roles:
     - { role: common,                   tags: ["common"] }
+    - { role: package-includes,         tags: ["common"] }
     - { role: ANXS.postgresql,          tags: ["spotweb"] }
 
-    #- { role: plexconnect,          tags: ["plex"] }
-    #- { role: plex-server,          tags: ["plex"] }
-    #- { role: samba-server,         tags: ["plex"] }
+    #- { role: spotweb,              tags: ["downloader"] }
+    #- { role: plex-server,          tags: ["media"] }
+    #- { role: samba-server,         tags: ["file-server"] }
 

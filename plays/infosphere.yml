@@ -5,6 +5,7 @@
   sudo: True
   roles:
     - { role: common, tags: ["common"] }
-    - { role: printer, tags: ["printer"] }
-    #- { role: deluged, tags: ["downloader"] }
+    - { role: package-includes, tags: ["common"] }
+    #- { role: printer, tags: ["printer"] }
+    - { role: deluged, tags: ["downloader"] }
     #- { role: nzbget, tags: ["downloader"] }

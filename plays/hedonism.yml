@@ -6,7 +6,8 @@
 
   roles:
     - { role: common,                   tags: ["common"] }
-    #- { role: plexconnect,          tags: ["plex"] }
-    #- { role: plex-server,          tags: ["plex"] }
-    #- { role: samba-server,         tags: ["plex"] }
+    - { role: package-includes, tags: ["common"] }
+    #- { role: plexconnect,          tags: ["media"] }
+    #- { role: plex-server,          tags: ["media"] }
+    #- { role: samba-server,         tags: ["file-server"] }
 
