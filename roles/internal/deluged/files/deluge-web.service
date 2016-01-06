@@ -1,0 +1,16 @@
+[Unit]
+Description=Deluge Web
+Wants=deluged.service
+After=deluged.service
+
+[Service]
+Type=simple
+User=deluged
+Group=deluged
+UMask=007
+
+ExecStart=/usr/bin/deluge-web -c /home/deluged -L warning
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

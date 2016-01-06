@@ -1,0 +1,9 @@
+- name: restart deluged
+  service: name=deluged.service enabled=yes state=restarted
+
+- name: reload systemd
+  shell: systemctl daemon-reload
+  when: (deluge_web_service.changed or deluged_service.changed)
+
+- name: restart deluge-web
+  service: name=deluge-web.service enabled=yes state=restarted

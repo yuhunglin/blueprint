@@ -1,0 +1,14 @@
+---
+dependencies:
+  - {
+      role: ANXS.generic-users,
+      genericusers_users: [
+        {
+          name: "deluged",
+          groups: [],
+          home: "/home/deluged",
+          ssh_keys: [],
+          system: yes
+        }
+      ]
+    }

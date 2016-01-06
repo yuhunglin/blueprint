@@ -1,0 +1,4 @@
+---
+deluged_completed_path: "/media/foo/completed"
+deluged_torrent_files_path: "/media/foo/torrents"
+deluged_download_path: "/media/foo"

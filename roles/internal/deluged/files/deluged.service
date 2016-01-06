@@ -1,0 +1,19 @@
+[Unit]
+Description=Deluge BitTorrent daemon
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=deluged
+Group=deluged
+UMask=007
+
+ExecStart=/usr/bin/deluged -d -c /home/deluged -L info
+Restart=on-failure
+
+# Configures the time to wait before service is stopped forcefully.
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

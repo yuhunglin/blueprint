@@ -1,0 +1,38 @@
+---
+- name: apt-get update if the last one is more than 3600 seconds ago
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: install packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - deluge
+    - deluged
+    - deluge-web
+
+- name: Install deluged systemd service
+  copy: src=deluged.service dest=/etc/systemd/system/deluged.service mode=0755
+
+- name: Stop deluged service to install config files
+  service: name=deluge-web state=stopped
+  ignore_errors: yes
+
+- name: setup deluged work directories
+  file: path={{ item }} state=directory owner=deluged
+  with_items:
+    - "{{ deluged_download_path }}"
+    - "{{ deluged_completed_path }}"
+    - "{{ deluged_torrent_files_path }}"
+
+- name: Install core.conf
+  template: src=core.conf.j2 dest=/home/deluged/core.conf owner=deluged force=yes
+  register: deluged_service
+  notify:
+    - reload systemd
+    - restart deluged
+
+- name: Install deluge-web systemd service
+  copy: src=deluge-web.service dest=/etc/systemd/system/deluge-web.service mode=0755
+  register: deluge_web_service
+  notify:
+    - reload systemd
+    - restart deluge-web
