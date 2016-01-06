@@ -1,3 +1,4 @@
+install ruby gem dotenv, probably with bundle
 vagrant plugin install vagrant-env
 <fill in env variables>
 vagrant up

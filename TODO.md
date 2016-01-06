@@ -2,3 +2,11 @@
 - printer role: automatically setup deskjet sharing?
   - google cloud print?
 - lucid chart of layout?
+- testkitchen
+- update machine hostnames (ANXS.hostname)
+- authorized keys
+- some forking to handle for debian/ubuntu differences
+- role to update credentials and suchA
+- https://pypi.python.org/pypi/StringGenerator/0.1.9 as a filter_plugin (http://docs.ansible.com/ansible/developing_plugins.html) (https://github.com/lxhunter/ansible-filter-plugins)
+  - fix password salt for deluged
+- eh... can't encrypt deluge password properly
