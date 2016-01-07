@@ -1,0 +1,14 @@
+---
+dependencies:
+  - {
+      role: ANXS.generic-users,
+      genericusers_users: [
+        {
+          name: "openvpn",
+          groups: [],
+          home: "/home/openvpn",
+          ssh_keys: [],
+          system: yes
+        }
+      ]
+    }

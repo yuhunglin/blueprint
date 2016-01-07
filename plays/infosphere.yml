@@ -6,6 +6,8 @@
   roles:
     - { role: common, tags: ["common"] }
     - { role: package-includes, tags: ["common"] }
-    #- { role: printer, tags: ["printer"] }
+    - { role: printer, tags: ["printer"] }
     - { role: deluged, tags: ["downloader"] }
     #- { role: nzbget, tags: ["downloader"] }
+    #- { role: swapon, tags: ["system"] }
+

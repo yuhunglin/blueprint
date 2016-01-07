@@ -11,3 +11,6 @@
 - src: git+https://github.com/ANXS/generic-users.git
   version: "v1.0.5"
   name: ANXS.generic-users
+- src: git+https://github.com/Stouts/Stouts.openvpn.git
+  version: "2.0.5"
+  name: Stouts.openvpn
