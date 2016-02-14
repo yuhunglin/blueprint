@@ -1,4 +1,9 @@
-.env
+.DS_Store
 .vpass
 .vagrant/
 roles/external/
+
+# Figure out how to back up these files outside of git
+.env
+home.ini
+group_vars/
