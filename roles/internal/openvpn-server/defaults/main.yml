@@ -1,0 +1,16 @@
+---
+blueprint_openvpn_host: "{{inventory_hostname}}"
+blueprint_openvpn_ip_range: 10.8.0.0 255.255.255.0
+blueprint_openvpn_key_country: "US"
+blueprint_openvpn_key_province: "CA"
+blueprint_openvpn_key_city: "San Francisco"
+blueprint_openvpn_key_org: "Fort-Funston"
+blueprint_openvpn_key_email: "me@myhost.mydomain"
+blueprint_openvpn_clients:
+  - 'shady-client'
+blueprint_openvpn_clients_revoke: []
+blueprint_openvpn_use_pam_users:
+  -
+    name: 'openvpn'
+    password: 'password'
+
