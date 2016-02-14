@@ -72,4 +72,6 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "forwarded_port", guest: 631, host: 8631
   config.vm.network "forwarded_port", guest: 8112, host: 8112
+  config.vm.network "forwarded_port", guest: 8085, host: 8085
+  config.vm.network "forwarded_port", guest: 1194, host: 11194, protocol: 'udp'
 end
