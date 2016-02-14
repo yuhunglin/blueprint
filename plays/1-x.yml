@@ -1,0 +1,11 @@
+---
+
+- name: 1-x.yml | Configures 1-x with stuff
+  hosts: 1-x
+  become: True
+
+  roles:
+    - { role: common,                   tags: ["common"] }
+    - { role: package-includes, tags: ["common"] }
+    #- { role: plexconnect,          tags: ["media"] }
+    #- { role: plex-server,          tags: ["media"] }

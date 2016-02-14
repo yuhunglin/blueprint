@@ -2,12 +2,10 @@
 
 - name: hedonism.yml | Configures hedonism with stuff
   hosts: hedonism
-  sudo: True
+  become: True
 
   roles:
     - { role: common,                   tags: ["common"] }
     - { role: package-includes, tags: ["common"] }
-    #- { role: plexconnect,          tags: ["media"] }
-    #- { role: plex-server,          tags: ["media"] }
     #- { role: samba-server,         tags: ["file-server"] }
 
