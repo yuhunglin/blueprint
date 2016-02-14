@@ -14,3 +14,5 @@
 - src: git+https://github.com/Stouts/Stouts.openvpn.git
   version: "2.0.5"
   name: Stouts.openvpn
+- src: git+https://github.com/avanov/ansible-galaxy-pyenv.git
+  name: avanov.pyenv
