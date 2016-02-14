@@ -1,15 +1,17 @@
 ---
 - name: Remove default apt settings
-  apt_repository: repo='deb http://http.debian.net/debian jessie main' state=absent
+  apt_repository: repo='deb {{ apt_repo_name }} jessie main' state=absent
+  when: ansible_lsb is undefined or ansible_lsb.get('id', '') != 'Raspbian'
 
 - name: Update default apt settings
-  apt_repository: repo='deb http://http.debian.net/debian jessie main non-free contrib' state=present
+  apt_repository: repo='deb {{ apt_repo_name }} jessie main non-free contrib' state=present
+  when: ansible_lsb is undefined or ansible_lsb.get('id', '') != 'Raspbian'
 
 - name: apt-get update
   apt: update_cache=yes
 
 - name: Install common packages
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest force=yes
   with_items:
    - apt-transport-https
    - tzdata
@@ -24,6 +26,17 @@
    - screen
    - software-properties-common
    - python-software-properties
+   - llvm
+   - build-essential
+   - libssl-dev
+   - zlib1g-dev
+   - libbz2-dev
+   - libreadline-dev
+   - libsqlite3-dev
+   - wget
+   - libncurses5-dev
+   - libncursesw5-dev
+   - pv
 
 - name: Upgrade all packages
   apt: upgrade=yes
