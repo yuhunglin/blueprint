@@ -1,0 +1,15 @@
+---
+
+- name: joey.yml | Configures joey with stuff
+  hosts: joey
+  become: True
+
+  #vars:
+    #apt_repo_name: http://archive.raspberrypi.org/debian/
+  roles:
+    - { role: common, tags: ["common"] }
+    - { role: package-includes, tags: ["common"] }
+    # https://github.com/dbryant4/ansible-role-route53-dyndns/blob/master/defaults/main.yml
+    #- { role: dbryant.route53-dyndns, tags: ['gateway'] }
+    - { role: openvpn-server, tags: ["gateway"] }
+    #- { role: haproxy, tags: ["gateway"] }
