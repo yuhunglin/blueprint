@@ -20,8 +20,12 @@
   file: path={{ item }} state=directory owner=deluged
   with_items:
     - "{{ deluged_download_path }}"
-    - "{{ deluged_completed_path }}"
     - "{{ deluged_torrent_files_path }}"
+
+- name: setup public completed directories
+  file: path={{ item }} state=directory owner={{ ansible_user }} mode=0777
+  with_items:
+    - "{{ deluged_completed_path }}"
 
 - name: Install core.conf
   template: src=core.conf.j2 dest=/home/deluged/core.conf owner=deluged force=yes

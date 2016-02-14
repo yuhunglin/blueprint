@@ -1,4 +1,4 @@
 ---
-deluged_completed_path: "/media/foo/completed"
+deluged_completed_path: "/media/staging/completed_torrents"
 deluged_torrent_files_path: "/media/foo/torrents"
-deluged_download_path: "/media/foo"
+deluged_download_path: "/media/foo/incomplete_torrents"
