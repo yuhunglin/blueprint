@@ -6,7 +6,17 @@
 - update machine hostnames (ANXS.hostname)
 - authorized keys
 - some forking to handle for debian/ubuntu differences
-- role to update credentials and suchA
+- role to update credentials and such
 - https://pypi.python.org/pypi/StringGenerator/0.1.9 as a filter_plugin (http://docs.ansible.com/ansible/developing_plugins.html) (https://github.com/lxhunter/ansible-filter-plugins)
   - fix password salt for deluged
-- eh... can't encrypt deluge password properly
+- deluged: eh... can't encrypt deluge password properly
+- **openvpn-server: fix hardcoded elements**
+- acdcli: rename to acd_cli
+- muck with history: http://www.computerhope.com/unix/uhistory.htm
+- look into s3ql to replace encfs?
+- aufs over unionfs
+- firewall stuff
+- http://www.cyberciti.biz/faq/linux-inotify-examples-to-replicate-directories/
+- look into spideroak to replace crashplan
+- openvpn: cert and key needs to get cleared out of the .ovpn file
+- common: look for an rbenv role
