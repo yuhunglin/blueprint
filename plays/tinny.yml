@@ -1,0 +1,12 @@
+---
+
+- name: Configure tinny with stuff
+  hosts: tinny
+  become: True
+
+  roles:
+    - { role: common, tags: ["common"] }
+    - { role: package-includes, tags: ["common"] }
+
+    #- { role: ANXS.postgresql, tags: ["db"] }
+   #- { role: spotweb,              tags: ["downloader"] }
