@@ -1,0 +1,19 @@
+[Unit]
+Description=Amazon Cloud Drive FUSE mount
+Documentation=https://acd-cli.readthedocs.org/en/latest/
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+UMask=007
+
+Environment=PYENV_VERSION=3.5.1
+
+ExecStart=/root/pyenv/shims/acd_cli mount --single-threaded --nonempty --allow-other --foreground {{ acd_cli_mount_directory }}
+ExecStop=/root/pyenv/shims/acd_cli -v -nl umount {{ acd_cli_mount_directory }}
+Restart=on-abort
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,10 @@
+---
+dependencies:
+  - {
+      role: avanov.pyenv,
+      pyenv_python_versions: ["2.7.11", "3.5.1"],
+      pyenv_virtualenvs: [
+        { venv_name: "3.5.1", py_version: "3.5.1" },
+        { venv_name: "2.7.11", py_version: "2.7.11" }
+      ]
+    }

@@ -1,0 +1,11 @@
+---
+acd_cli_oauth_token: "<need an non-expired token>"
+acd_cli_refresh_token: "abc123"
+acd_cli_mount_directory: "/media/.micro"
+acd_cli_enc_mount_directory: "/media/.micro/micro"
+acd_cli_encfs_directory: "/media/micro"
+acd_cli_encfs_password: "password"
+acd_cli_encfs_encoded_key_data: "HgPr6j5NzeXWNgKuDf5+sx+Su7/kASCHakDLBi04KiciiHWBhsiZ97NCvU4="
+acd_cli_encfs_encoded_salt_data: "qY7rPv7cCtAhbobDbWUMoss38yM="
+acd_cli_encfs_encoded_kdf_iterations: 196115
+

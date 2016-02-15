@@ -1,0 +1,16 @@
+[Unit]
+Description=Mount EncFs FUSE drive
+Documentation=http://man.cx/encfs
+After=acdcli.service
+
+[Service]
+Type=forking
+User=root
+Group=root
+UMask=007
+
+ExecStartPre=-/bin/fusermount -u {{ acd_cli_encfs_directory }}
+ExecStart=/bin/bash -c /root/encfs.sh
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,80 @@
+---
+- name: apt-get update if the last one is more than 3600 seconds ago
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: install packages
+  apt: pkg=encfs state=latest
+
+- name: switch to python 3.5.1
+  shell: 'pyenv global 3.5.1'
+
+- name: install acdcli
+  pip:
+    name: "git+https://github.com/yadayada/acd_cli.git"
+    state: "latest"
+    editable: False
+
+- name: setup acdcli work directories
+  file: path={{ item }} state=directory
+  with_items:
+    - "/root/.cache/acd_cli"
+    - "{{ acd_cli_enc_mount_directory }}"
+    - "{{ acd_cli_mount_directory }}"
+    - "{{ acd_cli_encfs_directory }}"
+
+- name: Get ansible_user_gid
+  shell: 'id -g {{ ansible_user }}'
+  register: ansible_user_gid
+
+- name: Install oauth_data
+  template: src=oauth_data.j2 dest=/root/.cache/acd_cli/oauth_data
+
+- name: Initialize acdcli
+  shell: 'acd_cli -v sync'
+
+- name: Install acdcli systemd service
+  template:
+    src: acdcli.service.j2
+    dest: /etc/systemd/system/acdcli.service
+    mode: 0644
+  register: acdcli_service
+  notify:
+    - reload systemd
+    - restart acdcli
+
+- name: Install encfs xml file
+  template:
+    src: encfs6.xml.j2
+    dest: /root/encfs6.xml
+    mode: 0600
+  notify:
+    - restart encfs
+
+- name: Install encfs password file
+  template:
+    src: encfs.j2
+    dest: /root/.encfs
+    mode: 0600
+  notify:
+    - restart encfs
+
+- name: Install encfs bash script
+  template:
+    src: encfs.sh.j2
+    dest: /root/encfs.sh
+    mode: 0700
+  notify:
+    - restart encfs
+
+- name: Install encfs systemd service
+  template:
+    src: encfs.service.j2
+    dest: /etc/systemd/system/encfs.service
+    mode: 0755
+  register: encfs_service
+  notify:
+    - reload systemd
+    - restart encfs
+
+- name: switch to python 2.7.11
+  shell: 'pyenv global 2.7.11'
