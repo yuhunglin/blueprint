@@ -1,0 +1,39 @@
+---
+- name: apt-get update if the last one is more than 3600 seconds ago
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: install nzbget
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - encfs
+    - p7zip
+    - unrar
+    - nzbget
+
+- name: setup nzbget work directories
+  file: path={{ item }} state=directory owner=nzbget
+  with_items:
+    - "{{ nzbget_working_path }}"
+    - "{{ nzbget_download_path }}"
+
+- name: setup public completed directories
+  file: path={{ item }} state=directory owner={{ ansible_user }} mode=0777
+  with_items:
+    - "{{ nzbget_completed_path }}"
+
+- name: install nzbget.conf
+  template:
+    src: nzbget.conf.j2
+    dest: /etc/nzbget.conf
+    mode: 0644
+  register: nzbget_service
+  notify:
+    - reload systemd
+    - restart nzbget
+
+- name: Install nzbget systemd service
+  copy: src=nzbget.service dest=/etc/systemd/system/nzbget.service mode=0755
+  register: nzbget_service
+  notify:
+    - reload systemd
+    - restart nzbget

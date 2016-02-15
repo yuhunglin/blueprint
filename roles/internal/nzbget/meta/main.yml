@@ -1,0 +1,14 @@
+---
+dependencies:
+  - {
+      role: ANXS.generic-users,
+      genericusers_users: [
+        {
+          name: "nzbget",
+          groups: [],
+          home: "/home/nzbget",
+          ssh_keys: [],
+          system: yes
+        }
+      ]
+    }

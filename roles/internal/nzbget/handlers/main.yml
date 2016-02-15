@@ -1,0 +1,6 @@
+- name: reload systemd
+  shell: systemctl daemon-reload
+  when: nzbget_service.changed
+
+- name: restart nzbget
+  service: name=nzbget.service enabled=yes state=restarted

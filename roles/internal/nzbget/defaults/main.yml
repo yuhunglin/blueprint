@@ -1,0 +1,18 @@
+---
+nzbget_working_path: "/media/foo/nzbget"
+nzbget_completed_path: "/media/staging/completed_nzbs"
+nzbget_download_path: "/media/foo/incomplete_nzbs"
+
+nzbget_server1_name: "foo"
+nzbget_server1_host: "host"
+nzbget_server1_port: 563
+nzbget_server1_username: "user"
+nzbget_server1_password: "password"
+nzbget_server1_connections: 1
+
+nzbget_server2_name: "foo"
+nzbget_server2_host: "host"
+nzbget_server2_port: 563
+nzbget_server2_username: "user"
+nzbget_server2_password: "password"
+nzbget_server2_connections: 1
