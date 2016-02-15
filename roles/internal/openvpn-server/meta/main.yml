@@ -2,24 +2,24 @@
 dependencies:
   -
      role: Stouts.openvpn
-     openvpn_host: "{{ blueprint_openvpn_host }}"
-     openvpn_server: "{{ blueprint_openvpn_ip_range }}"
+     openvpn_host: "{{ blueprint_openvpn_server_host }}"
+     openvpn_server: "{{ blueprint_openvpn_server_ip_range }}"
      openvpn_log: STDOUT
      openvpn_verb: 4
      openvpn_max_clients: 25
      openvpn_server_options: [
-       'push "route {{ blueprint_openvpn_ip_range }}"',
+       'push "route {{ blueprint_openvpn_server_ip_range }}"',
        'push "route {{ ansible_default_ipv4["address"] }} 255.255.255.255 net_gateway"',
        'push "dhcp-option DNS 8.8.8.8"',
        'push "dhcp-option DNS 8.8.4.4"',
      ]
      openvpn_key_size: 4096
-     openvpn_key_country: "{{ blueprint_openvpn_key_country }}"
-     openvpn_key_province: "{{ blueprint_openvpn_key_province }}"
-     openvpn_key_city: "{{ blueprint_openvpn_key_city }}"
-     openvpn_key_org: "{{ blueprint_openvpn_key_org }}"
-     openvpn_key_email: "{{ blueprint_openvpn_key_email }}"
-     openvpn_clients: "{{ blueprint_openvpn_clients }}"
-     openvpn_clients_revoke: "{{ blueprint_openvpn_clients_revoke }}"
-     openvpn_use_pam_users: "{{ blueprint_openvpn_use_pam_users }}"
+     openvpn_key_country: "{{ blueprint_openvpn_server_key_country }}"
+     openvpn_key_province: "{{ blueprint_openvpn_server_key_province }}"
+     openvpn_key_city: "{{ blueprint_openvpn_server_key_city }}"
+     openvpn_key_org: "{{ blueprint_openvpn_server_key_org }}"
+     openvpn_key_email: "{{ blueprint_openvpn_server_key_email }}"
+     openvpn_clients: "{{ blueprint_openvpn_server_clients }}"
+     openvpn_clients_revoke: "{{ blueprint_openvpn_server_clients_revoke }}"
+     openvpn_use_pam_users: "{{ blueprint_openvpn_server_use_pam_users }}"
 
