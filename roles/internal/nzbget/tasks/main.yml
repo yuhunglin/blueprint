@@ -26,6 +26,7 @@
     src: nzbget.conf.j2
     dest: /etc/nzbget.conf
     mode: 0644
+    owner: nzbget
   register: nzbget_service
   notify:
     - reload systemd
