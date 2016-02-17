@@ -9,7 +9,8 @@ vagrant up
 - https://github.com/enginyoyen/ansible-best-practises/
 
 ## Assumptions
-- Debian jessie / Ubuntu ?
+- Debian jessie
+-- when necessary, raspbian
 - Systemd (for better or worse)
 - Python is pre-installed on system
 - Aptitude is installed on system
