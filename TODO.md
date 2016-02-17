@@ -18,3 +18,4 @@
 - http://www.cyberciti.biz/faq/linux-inotify-examples-to-replicate-directories/
 - look into spideroak to replace crashplan
 - common: look for an rbenv role
+- hedonism: time-machine setup (http://bullcreekstudio.com/uncategorized/debian-wheezy-mavericks-time-machine-server/)
