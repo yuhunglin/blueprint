@@ -12,6 +12,9 @@ dependencies:
        'push "route {{ ansible_default_ipv4["address"] }} 255.255.255.255 net_gateway"',
        'push "dhcp-option DNS 8.8.8.8"',
        'push "dhcp-option DNS 8.8.4.4"',
+       ]
+     openvpn_client_options: [
+      'auth-nocache'
      ]
      openvpn_key_size: 4096
      openvpn_key_country: "{{ blueprint_openvpn_server_key_country }}"
