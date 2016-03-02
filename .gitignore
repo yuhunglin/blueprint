@@ -6,4 +6,3 @@ roles/external/
 # Figure out how to back up these files outside of git
 .env
 home.ini
-group_vars/
