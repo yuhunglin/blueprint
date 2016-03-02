@@ -1,7 +1,11 @@
-install ruby gem dotenv, probably with bundle
-vagrant plugin install vagrant-env
-<fill in env variables>
-vagrant up
+## Installation
+
+- `bundle install`
+- `cp .env.sample .env`
+- <fill in env variables>
+- <get group_vars>
+- vagrant plugin install vagrant-env
+- vagrant up
 
 
 ## Credits
