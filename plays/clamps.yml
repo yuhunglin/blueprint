@@ -1,0 +1,15 @@
+---
+
+- name: clamps.yml | Configures clamps with stuff
+  hosts: clamps
+  become: True
+
+  roles:
+    - { role: common, tags: ["common"] }
+    - { role: package-includes, tags: ["common"] }
+    # https://github.com/dbryant4/ansible-role-route53-dyndns/blob/master/defaults/main.yml
+    #- { role: dbryant.route53-dyndns, tags: ['gateway'] }
+    - { role: openvpn-server, tags: ["gateway"] }
+    - { role: deluged, tags: ["downloader"] }
+    - { role: acdcli, tags: ["downloader"] }
+    - { role: nzbget, tags: ["downloader"] }
