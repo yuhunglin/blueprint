@@ -4,6 +4,9 @@
 - name: install iptables
   apt: pkg=iptables state=latest
 
+- name: setup iptables directory
+  file: path="/etc/iptables/" state=directory
+
 - name: setup iptables NAT rules
   copy: src=rules.v4 dest=/etc/iptables/rules.v4
 
