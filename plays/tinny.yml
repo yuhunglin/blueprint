@@ -10,3 +10,4 @@
 
     #- { role: ANXS.postgresql, tags: ["db"] }
    #- { role: spotweb,              tags: ["downloader"] }
+    - { role: ANXS.hostname, tags: ["common"] }

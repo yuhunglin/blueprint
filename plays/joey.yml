@@ -12,4 +12,5 @@
     # https://github.com/dbryant4/ansible-role-route53-dyndns/blob/master/defaults/main.yml
     #- { role: dbryant.route53-dyndns, tags: ['gateway'] }
     - { role: openvpn-server, tags: ["gateway"] }
+    - { role: ANXS.hostname, tags: ["common"] }
     #- { role: haproxy, tags: ["gateway"] }

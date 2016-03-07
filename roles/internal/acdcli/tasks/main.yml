@@ -30,7 +30,7 @@
   template: src=oauth_data.j2 dest=/root/.cache/acd_cli/oauth_data
 
 - name: Initialize acdcli
-  shell: 'acd_cli -v sync'
+  shell: 'PYENV_VERSION=3.5.1 /root/pyenv/shims/acd_cli -v sync'
 
 - name: Install acdcli systemd service
   template:

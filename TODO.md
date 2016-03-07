@@ -1,7 +1,6 @@
 - maybe a different take on the shell scripts
 - lucid chart of layout?
 - testkitchen
-- update machine hostnames (ANXS.hostname)
 - authorized keys
 - some forking to handle for debian/ubuntu differences
 - role to update credentials and such

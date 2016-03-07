@@ -1,7 +1,7 @@
 ---
 
-- name: 1-x.yml | Configures 1-x with stuff
-  hosts: 1-x
+- name: 1x.yml | Configures 1x with stuff
+  hosts: 1x
   become: True
 
   roles:
@@ -10,3 +10,4 @@
     - { role: acdcli, tags: ["downloader"] }
     #- { role: plexconnect,          tags: ["media"] }
     #- { role: plex-server,          tags: ["media"] }
+    - { role: ANXS.hostname, tags: ["common"] }

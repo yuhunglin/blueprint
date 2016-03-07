@@ -10,3 +10,4 @@
     - { role: deluged, tags: ["downloader"] }
     - { role: acdcli, tags: ["downloader"] }
     - { role: nzbget, tags: ["downloader"] }
+    - { role: ANXS.hostname, tags: ["common"] }

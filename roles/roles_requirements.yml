@@ -19,3 +19,6 @@
 - src: git+https://github.com/ANXS/hostname.git
   version: "v1.1.0"
   name: ANXS.hostname
+- src: git+https://github.com/ANXS/apt.git
+  version: "v1.0.2"
+  name: ANXS.apt

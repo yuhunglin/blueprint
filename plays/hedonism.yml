@@ -1,5 +1,6 @@
 ---
 
+# TODO: Might not need this if we're going with unraid
 - name: hedonism.yml | Configures hedonism with stuff
   hosts: hedonism
   become: True
@@ -8,4 +9,4 @@
     - { role: common,                   tags: ["common"] }
     - { role: package-includes, tags: ["common"] }
     #- { role: samba-server,         tags: ["file-server"] }
-
+    - { role: ANXS.hostname, tags: ["common"] }
