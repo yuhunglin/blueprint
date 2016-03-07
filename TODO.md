@@ -12,7 +12,6 @@
 - muck with history: http://www.computerhope.com/unix/uhistory.htm
 - look into s3ql to replace encfs?
 - aufs over unionfs
-- firewall stuff
 - http://www.cyberciti.biz/faq/linux-inotify-examples-to-replicate-directories/
 - look into spideroak to replace crashplan
 - common: look for an rbenv role
