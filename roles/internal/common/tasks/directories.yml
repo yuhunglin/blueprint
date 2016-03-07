@@ -1,0 +1,3 @@
+---
+- name: setup default sshfs directory
+  file: path=/media/tiny state=directory

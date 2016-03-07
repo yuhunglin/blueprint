@@ -1,16 +1,19 @@
 - maybe a different take on the shell scripts
 - lucid chart of layout?
 - testkitchen
-- authorized keys
+
 - some forking to handle for debian/ubuntu differences
 - https://pypi.python.org/pypi/StringGenerator/0.1.9 as a filter_plugin (http://docs.ansible.com/ansible/developing_plugins.html) (https://github.com/lxhunter/ansible-filter-plugins)
   - fix password salt for deluged
 - deluged: eh... can't encrypt deluge password properly
+
 - muck with history: http://www.computerhope.com/unix/uhistory.htm
+- common: look for an rbenv role: https://github.com/zzet/ansible-rbenv-role
+- common: locales setup?
+
 - look into s3ql to replace encfs?
 - aufs over unionfs
-- http://www.cyberciti.biz/faq/linux-inotify-examples-to-replicate-directories/
 - look into spideroak to replace crashplan
-- common: look for an rbenv role
+
+- http://www.cyberciti.biz/faq/linux-inotify-examples-to-replicate-directories/
 - hedonism: time-machine setup (http://bullcreekstudio.com/uncategorized/debian-wheezy-mavericks-time-machine-server/)
-- common: locales setup?

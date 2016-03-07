@@ -1,0 +1,5 @@
+---
+- name: Add authorized ssh keys
+  authorized_key: user="{{ ansible_user }}" key="{{ lookup('file', item) }}"
+  with_fileglob:
+    - authorized_keys/*.pub
