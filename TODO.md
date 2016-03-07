@@ -7,9 +7,11 @@
   - fix password salt for deluged
 - deluged: eh... can't encrypt deluge password properly
 
+- spotweb
+- route53
 - muck with history: http://www.computerhope.com/unix/uhistory.htm
-- common: look for an rbenv role: https://github.com/zzet/ansible-rbenv-role
 - common: locales setup?
+- common: look for an rbenv role: https://github.com/zzet/ansible-rbenv-role
 
 - look into s3ql to replace encfs?
 - aufs over unionfs
