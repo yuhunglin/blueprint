@@ -8,6 +8,6 @@
     - { role: common, tags: ["common"] }
     - { role: package-includes, tags: ["common"] }
     - { role: deluged, tags: ["downloader"] }
-    - { role: acdcli, tags: ["downloader"] }
+    - { role: acd-cli, tags: ["downloader"] }
     - { role: nzbget, tags: ["downloader"] }
     - { role: ANXS.hostname, tags: ["common"] }

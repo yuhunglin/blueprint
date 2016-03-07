@@ -17,7 +17,7 @@ vagrant up
 - Swapon if memory is an issue
 
 ## Notes:
-- acdcli:
+- acd-cli:
   - http://blog.woralelandia.com/2012/07/16/fuse-mount-options/
   - reference: http://blog.woralelandia.com/2012/07/16/fuse-mount-options/
 - backup?:

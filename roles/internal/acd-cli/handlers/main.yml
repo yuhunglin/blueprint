@@ -1,0 +1,9 @@
+- name: reload systemd
+  shell: systemctl daemon-reload
+  when: (acd-cli_service.changed or encfs_service.changed)
+
+- name: restart acd-cli
+  service: name=acd-cli.service enabled=yes state=restarted
+
+- name: restart encfs
+  service: name=encfs.service enabled=yes state=restarted

@@ -11,7 +11,7 @@
     #- { role: dbryant.route53-dyndns, tags: ['gateway'] }
     - { role: openvpn-server, tags: ["gateway"] }
     - { role: deluged, tags: ["downloader"] }
-    - { role: acdcli, tags: ["downloader"] }
+    - { role: acd-cli, tags: ["downloader"] }
     - { role: nzbget, tags: ["downloader"] }
     #- { role: nzbget, tags: ["downloader"] }
     - { role: ANXS.hostname, tags: ["common"] }

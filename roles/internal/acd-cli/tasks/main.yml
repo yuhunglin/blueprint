@@ -8,13 +8,13 @@
 - name: switch to python 3.5.1
   shell: 'pyenv global 3.5.1'
 
-- name: install acdcli
+- name: install acd-cli
   pip:
     name: "git+https://github.com/yadayada/acd_cli.git"
     state: "latest"
     editable: False
 
-- name: setup acdcli work directories
+- name: setup acd-cli work directories
   file: path={{ item }} state=directory
   with_items:
     - "/root/.cache/acd_cli"
@@ -29,18 +29,18 @@
 - name: Install oauth_data
   template: src=oauth_data.j2 dest=/root/.cache/acd_cli/oauth_data
 
-- name: Initialize acdcli
+- name: Initialize acd-cli
   shell: 'PYENV_VERSION=3.5.1 /root/pyenv/shims/acd_cli -v sync'
 
-- name: Install acdcli systemd service
+- name: Install acd-cli systemd service
   template:
-    src: acdcli.service.j2
-    dest: /etc/systemd/system/acdcli.service
+    src: acd-cli.service.j2
+    dest: /etc/systemd/system/acd-cli.service
     mode: 0644
-  register: acdcli_service
+  register: acd-cli_service
   notify:
     - reload systemd
-    - restart acdcli
+    - restart acd-cli
 
 - name: Install encfs xml file
   template:
