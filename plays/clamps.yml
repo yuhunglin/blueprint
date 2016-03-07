@@ -13,3 +13,4 @@
     - { role: deluged, tags: ["downloader"] }
     - { role: acdcli, tags: ["downloader"] }
     - { role: nzbget, tags: ["downloader"] }
+    #- { role: nzbget, tags: ["downloader"] }

@@ -7,5 +7,6 @@
   roles:
     - { role: common,                   tags: ["common"] }
     - { role: package-includes, tags: ["common"] }
+    - { role: acdcli, tags: ["downloader"] }
     #- { role: plexconnect,          tags: ["media"] }
     #- { role: plex-server,          tags: ["media"] }
