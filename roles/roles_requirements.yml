@@ -16,3 +16,6 @@
   name: Stouts.openvpn
 - src: git+https://github.com/avanov/ansible-galaxy-pyenv.git
   name: avanov.pyenv
+- src: git+https://github.com/ANXS/hostname.git
+  version: "v1.1.0"
+  name: ANXS.hostname
