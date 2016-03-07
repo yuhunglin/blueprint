@@ -4,9 +4,10 @@
 - `cp .env.sample .env`
 - <fill in env variables>
 - <get group_vars>
-- vagrant plugin install vagrant-env
-- vagrant up
-
+- `vagrant plugin install vagrant-env`
+- `vagrant up`
+- `extensions/setup/role_update.sh`
+- `touch .vpass`
 
 ## Credits
 
