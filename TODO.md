@@ -10,6 +10,7 @@
 - spotweb
   - http://www.htpcguides.com/install-spotweb-on-banana-pi-for-personal-usenet-indexer/
   - https://github.com/spotweb/spotweb
+- fail2ban hardening
 - route53
 - fix deluged configs
 - muck with history: http://www.computerhope.com/unix/uhistory.htm
