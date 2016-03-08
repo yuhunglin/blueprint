@@ -8,7 +8,10 @@
 - deluged: eh... can't encrypt deluge password properly
 
 - spotweb
+  - http://www.htpcguides.com/install-spotweb-on-banana-pi-for-personal-usenet-indexer/
+  - https://github.com/spotweb/spotweb
 - route53
+- fix deluged configs
 - muck with history: http://www.computerhope.com/unix/uhistory.htm
 - common: locales setup?
 - common: look for an rbenv role: https://github.com/zzet/ansible-rbenv-role
