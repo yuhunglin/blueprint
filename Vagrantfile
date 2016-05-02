@@ -8,6 +8,10 @@
 Vagrant.configure(2) do |config|
   config.env.enable
 
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
+  end
+
   config.vm.box = "boxcutter/debian82-i386"
 
   # Disable automatic box update checking. If you disable this, then
