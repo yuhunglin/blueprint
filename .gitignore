@@ -2,6 +2,7 @@
 .vpass
 .vagrant/
 roles/external/
+*.retry
 
 # Figure out how to back up these files outside of git
 .env
