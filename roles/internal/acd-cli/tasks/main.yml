@@ -37,7 +37,7 @@
     src: acd-cli.service.j2
     dest: /etc/systemd/system/acd-cli.service
     mode: 0644
-  register: acd-cli_service
+  register: acd_cli_service
   notify:
     - reload systemd
     - restart acd-cli

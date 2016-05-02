@@ -15,7 +15,8 @@ ExecStartPre=-/root/pyenv/shims/acd_cli umount --lazy
 ExecStartPre=-/root/pyenv/shims/acd_cli sync
 ExecStart=/root/pyenv/shims/acd_cli mount --single-threaded --nonempty --allow-other --foreground {{ acd_cli_mount_directory }}
 ExecStop=/root/pyenv/shims/acd_cli -v -nl umount {{ acd_cli_mount_directory }}
-Restart=on-abort
+Restart=on-failure
+RestartSec=30
 
 [Install]
 WantedBy=default.target
