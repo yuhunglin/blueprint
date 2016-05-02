@@ -23,3 +23,4 @@
 
 - http://www.cyberciti.biz/faq/linux-inotify-examples-to-replicate-directories/
 - hedonism: time-machine setup (http://bullcreekstudio.com/uncategorized/debian-wheezy-mavericks-time-machine-server/)
+- get away from crappy python libraries: https://github.com/terencehonles/fusepy/commit/220ab76b5d1a95ffced0e48023abdea926ae6bfc. Splat into ~/pyenv/versions/3.5.1/lib/python3.5/site-packages/acdcli/bundled/pyfuse.py
