@@ -2,3 +2,5 @@
 - include: packages.yml
 - include: directories.yml
 - include: keys.yml
+- include: fail2ban.yml
+  when: enable_fail2ban

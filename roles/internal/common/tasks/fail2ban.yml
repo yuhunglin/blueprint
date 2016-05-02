@@ -1,0 +1,17 @@
+---
+- name: Install fail2ban
+  apt: pkg=fail2ban state=latest force=yes
+
+- name: Copy fail2ban config
+  copy: src=jail.local dest=/etc/fail2ban/jail.local mode=755
+  notify:
+    - restart fail2ban
+
+- name: Disallow password authentication
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PasswordAuthentication"
+    line: "PasswordAuthentication no"
+    state: present
+  notify:
+    - restart ssh

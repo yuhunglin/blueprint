@@ -1,2 +1,3 @@
 ---
 apt_repo_name: http://http.debian.net/debian
+enable_fail2ban: true
