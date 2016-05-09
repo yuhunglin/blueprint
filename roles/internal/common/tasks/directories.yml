@@ -1,3 +1,6 @@
 ---
 - name: setup default sshfs directory
   file: path=/media/tiny state=directory
+
+- name: setup default postgres data directory
+  file: path=/media/postgres state=directory

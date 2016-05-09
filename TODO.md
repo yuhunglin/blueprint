@@ -7,10 +7,6 @@
   - fix password salt for deluged
 - deluged: eh... can't encrypt deluge password properly
 
-- spotweb
-  - http://www.htpcguides.com/install-spotweb-on-banana-pi-for-personal-usenet-indexer/
-  - https://github.com/spotweb/spotweb
-- fail2ban hardening
 - route53
 - fix deluged configs
 - muck with history: http://www.computerhope.com/unix/uhistory.htm
@@ -24,3 +20,6 @@
 - http://www.cyberciti.biz/faq/linux-inotify-examples-to-replicate-directories/
 - hedonism: time-machine setup (http://bullcreekstudio.com/uncategorized/debian-wheezy-mavericks-time-machine-server/)
 - get away from crappy python libraries: https://github.com/terencehonles/fusepy/commit/220ab76b5d1a95ffced0e48023abdea926ae6bfc. Splat into ~/pyenv/versions/3.5.1/lib/python3.5/site-packages/acdcli/bundled/pyfuse.py
+- pull in the different take on openvpn
+
+- What's a good strategy to deal with vars needed in meta dependencies?

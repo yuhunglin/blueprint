@@ -1,0 +1,4 @@
+---
+- include: packages.yml
+# Best way to automate the setup is to probably restore from a db snapshot dump unfortunately
+- include: cron.yml

@@ -1,0 +1,23 @@
+- name: Install php and postgres related packages
+  apt: pkg={{ item }} state=latest force=yes
+  with_items:
+    - git
+    - php5-pgsql
+    - php5-cli
+    - php5-curl
+
+- name: Clone spotweb from github
+  git:
+    repo: "https://github.com/spotweb/spotweb"
+    dest: "/opt/spotweb"
+
+- name: Fix file ownership
+  file:
+    path: "/opt/spotweb/"
+    owner: "www-data"
+    group: "www-data"
+    recurse: yes
+  notify:
+    - restart nginx
+    - restart php-fpm
+

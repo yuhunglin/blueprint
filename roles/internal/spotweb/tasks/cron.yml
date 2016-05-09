@@ -1,0 +1,8 @@
+---
+- name: Install retrieval cronjob
+  cron:
+    name: "Retrieve spots"
+    minute: "0"
+    hour: "*/2"
+    job: "/usr/bin/php /opt/spotweb/retrieve.php >> /var/log/spotweb"
+

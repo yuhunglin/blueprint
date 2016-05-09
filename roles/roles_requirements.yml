@@ -1,6 +1,6 @@
 ---
 - src: git+https://github.com/ANXS/postgresql.git
-  version: "v1.1.1"
+  version: "v1.4.0"
   name: ANXS.postgresql
 - src: git+https://github.com/ANXS/git.git
   version: "v1.0.1"
@@ -22,3 +22,10 @@
 - src: git+https://github.com/ANXS/apt.git
   version: "v1.0.2"
   name: ANXS.apt
+- src: git+https://github.com/geerlingguy/ansible-role-php
+  version: "2.0.3"
+  name: geerlingguy.php
+- src: git+https://github.com/geerlingguy/ansible-role-nginx
+  version: "1.9.0"
+  name: geerlingguy.nginx
+
