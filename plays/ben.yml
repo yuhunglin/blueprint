@@ -1,0 +1,24 @@
+---
+
+- name: ben.yml | Configures ben with stuff
+  hosts: ben
+  become: True
+
+  roles:
+    - { role: common, tags: ["common"] }
+    - { role: package-includes, tags: ["common"] }
+    #- {
+        #role: kamaln7.swapfile,
+        #swapfile_size: 2GB
+      #}
+    - { role: deluged, tags: ["downloader"] }
+    - { role: nzbget, tags: ["downloader"] }
+      # remember to patch after.
+    #- { role: acd-cli, tags: ["downloader"] }
+    #- { role: spotweb, tags: ["downloader"] }
+    - { role: sickrage, tags: ["media"] }
+    #- { role: couchpotato,          tags: ["media"] }
+    #- { role: headphones,          tags: ["media"] }
+    #- { role: sonarr,          tags: ["media"] }
+    #- { role: htpcmanager,     tags: ["media"] }
+    - { role: ANXS.hostname, tags: ["common"] }

@@ -2,15 +2,23 @@
 dependencies:
   -
      role: ANXS.postgresql
+     postgresql_version: 9.4
      #postgresql_data_root
+     postgresql_shared_buffers: 32MB
      postgresql_data_directory: "/media/postgres/{{ postgresql_varlib_directory_name }}/{{postgresql_version}}/{{postgresql_cluster_name}}"
      # XXX: extract this
+     postgresql_apt_key_url: False
+     postgresql_apt_repository: False
+     postgresql_apt_pin_priority: False
+     postgresql_listen_addresses:
+       - "*"
+
      postgresql_cluster_reset: true #spotweb_init_db
      postgresql_databases: [
        {
          name: spotweb,
          owner: spotweb,
-         uuid_ossp: yes
+         uuid_ossp: no
        }
      ]
      postgresql_users: [

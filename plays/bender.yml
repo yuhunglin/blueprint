@@ -1,13 +1,14 @@
 ---
 
-- name: 1x.yml | Configures 1x with stuff
-  hosts: 1x
+- name: bender.yml | Configures bender with stuff
+  hosts: bender
   become: True
 
   roles:
     - { role: common,                   tags: ["common"] }
     - { role: package-includes, tags: ["common"] }
     - { role: acd-cli, tags: ["downloader"] }
+    - { role: plex-server,          tags: ["media"] }
     #- { role: plexconnect,          tags: ["media"] }
-    #- { role: plex-server,          tags: ["media"] }
+    #- { role: plexpy,          tags: ["media"] }
     - { role: ANXS.hostname, tags: ["common"] }

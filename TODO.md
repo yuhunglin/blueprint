@@ -19,7 +19,10 @@
 
 - http://www.cyberciti.biz/faq/linux-inotify-examples-to-replicate-directories/
 - hedonism: time-machine setup (http://bullcreekstudio.com/uncategorized/debian-wheezy-mavericks-time-machine-server/)
-- get away from crappy python libraries: https://github.com/terencehonles/fusepy/commit/220ab76b5d1a95ffced0e48023abdea926ae6bfc. Splat into ~/pyenv/versions/3.5.1/lib/python3.5/site-packages/acdcli/bundled/pyfuse.py
+- get away from crappy python libraries: https://github.com/terencehonles/fusepy/commit/220ab76b5d1a95ffced0e48023abdea926ae6bfc. Splat conditional into ~/pyenv/versions/3.5.1/lib/python3.5/site-packages/acdcli/bundled/pyfuse.py
 - pull in the different take on openvpn
 
 - What's a good strategy to deal with vars needed in meta dependencies?
+- https://tensile-runway-92512.appspot.com to refresh token
+- deal with shifting plex media version
+- Spotweb: best way to restore is to just let the retrieval run (maybe without ssl) instead of trying to restore the db

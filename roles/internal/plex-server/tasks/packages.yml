@@ -1,0 +1,20 @@
+---
+
+- name: downloading plex
+  get_url:
+    url: "{{ plex_deb_url }}"
+    dest: "{{ plex_dl_dir }}/{{ plex_deb_file }}"
+
+- name: check if plex is already installed
+  command: "dpkg -s plexmediaserver"
+  register: result
+  changed_when: False
+  ignore_errors: yes
+
+- name: installing plex
+  command: "dpkg -i {{ plex_dl_dir }}/{{ plex_deb_file }}"
+  when: result|failed
+
+- name: upgrading plex
+  command: "dpkg -i {{ plex_dl_dir }}/{{ plex_deb_file }}"
+  when: result

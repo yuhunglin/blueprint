@@ -1,0 +1,8 @@
+---
+# tasks file for plex-server
+- include: packages.yml
+
+- name: starting plex
+  service:
+    name: plexmediaserver
+    state: started

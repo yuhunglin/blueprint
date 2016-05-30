@@ -1,2 +1,2 @@
 #!/bin/sh -
-cat /root/.encfs | ENCFS6_CONFIG=/root/encfs6.xml encfs --public -S {{ acd_cli_enc_mount_directory }} {{ acd_cli_encfs_directory }} -- -o gid={{ ansible_user_gid.stdout }},entry_timeout=0,attr_timeout=0
+cat /root/.encfs | ENCFS6_CONFIG=/root/encfs6.xml encfs --public -S {{ acd_cli_enc_mount_directory }} {{ acd_cli_encfs_directory }} -- -o gid={{ ansible_user_gid.stdout }},entry_timeout=0,attr_timeout=0,allow_other,umask=0002

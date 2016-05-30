@@ -28,4 +28,6 @@
 - src: git+https://github.com/geerlingguy/ansible-role-nginx
   version: "1.9.0"
   name: geerlingguy.nginx
-
+- src: git+https://github.com/kamaln7/ansible-swapfile.git
+  version: "0.4"
+  name: kamaln7.swapfile

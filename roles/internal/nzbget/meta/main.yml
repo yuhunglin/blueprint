@@ -2,10 +2,15 @@
 dependencies:
   - {
       role: ANXS.generic-users,
+      genericusers_groups: [
+        {
+          name: "downloaders"
+        }
+      ],
       genericusers_users: [
         {
           name: "nzbget",
-          groups: [],
+          groups: ["downloaders"],
           home: "/home/nzbget",
           ssh_keys: [],
           system: yes

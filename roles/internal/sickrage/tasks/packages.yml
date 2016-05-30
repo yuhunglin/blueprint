@@ -1,0 +1,9 @@
+---
+- name: Install sickrage dependencies
+  apt: pkg={{ item }} state=latest force=yes
+  with_items:
+    - git-core
+    - unrar-free
+    - openssl
+    - libssl-dev
+

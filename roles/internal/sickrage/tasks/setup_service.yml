@@ -1,0 +1,19 @@
+---
+- name: Clone sickrage from github
+  git:
+    repo: "https://github.com/SickRage/SickRage.git"
+    dest: "/opt/sickrage"
+
+- name: Fix file ownership
+  file:
+    path: "/opt/sickrage/"
+    owner: "sickrage"
+    group: "sickrage"
+    recurse: yes
+
+- name: Install sickrage.service
+  copy: src=sickrage.service dest=/etc/systemd/system/sickrage.service mode=644
+  register: sickrage_service
+  notify:
+    - reload systemd
+    - restart sickrage

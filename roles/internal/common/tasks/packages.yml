@@ -25,6 +25,9 @@
    - apticron
    - screen
    - software-properties-common
+   - sudo
+   - systemd
+   - systemd-sysv
    - python-software-properties
    - llvm
    - build-essential
@@ -39,6 +42,15 @@
    - pv
    - locales
    - vim
+   - iputils-ping
+   - fuse
 
 - name: Upgrade all packages
   apt: upgrade=yes
+
+- name: Allow others to access fuse mounts
+  lineinfile:
+    dest: /etc/fuse.conf
+    regexp: ^#user_allow_other
+    line: user_allow_other
+    state: present

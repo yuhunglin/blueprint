@@ -6,6 +6,11 @@
 
   roles:
     - { role: common, tags: ["common"] }
+    - {
+        role: kamaln7.swapfile,
+        swapfile_size: 1GB,
+        swapfile_location: /media/postgres/swapfile
+      }
     - { role: package-includes, tags: ["common"] }
     - { role: spotweb, tags: ["downloader"] }
     - { role: ANXS.hostname, tags: ["common"] }

@@ -11,13 +11,24 @@
     - nzbget
 
 - name: setup nzbget work directories
-  file: path={{ item }} state=directory owner=nzbget
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: nzbget
+    group: "{{ nzbget_group }}"
+    mode: 0770
   with_items:
     - "{{ nzbget_working_path }}"
     - "{{ nzbget_download_path }}"
+    - "{{ nzbget_nzb_path }}"
 
 - name: setup public completed directories
-  file: path={{ item }} state=directory owner={{ ansible_user }} mode=0777
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ nzbget_group }}"
+    mode: 0775
   with_items:
     - "{{ nzbget_completed_path }}"
 
@@ -38,3 +49,9 @@
   notify:
     - reload systemd
     - restart nzbget
+
+- name: Cronjob to fix file permissions in completed folder every 10 minutes
+  cron:
+    name: "fix completed permissions"
+    minute: "*/10"
+    job: "chown -R {{ ansible_user }}:downloaders {{ nzbget_completed_path }} && chmod -R 770 {{ nzbget_completed_path }}/*"

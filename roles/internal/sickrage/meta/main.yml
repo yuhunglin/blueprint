@@ -9,7 +9,7 @@ dependencies:
       ],
       genericusers_users: [
         {
-          name: "deluged",
+          name: "sickrage",
           groups: ["downloaders"],
           home: "/home/deluged",
           ssh_keys: [],

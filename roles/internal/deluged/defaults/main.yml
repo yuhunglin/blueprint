@@ -1,4 +1,7 @@
 ---
-deluged_completed_path: "/media/staging/completed_torrents"
+deluged_completed_path: "/media/staging/completed"
 deluged_torrent_files_path: "/media/foo/torrents"
 deluged_download_path: "/media/foo/incomplete_torrents"
+
+# doesn't really do anything, can't map vars in meta
+deluged_group: "downloaders"

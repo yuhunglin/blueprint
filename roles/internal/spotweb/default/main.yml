@@ -1,5 +1,5 @@
 # These don't do anything for the meta, but just noting which vars to deal with.
 spotweb_init_db: true
-postgresql_data_root: "/media/postgres/"
+postgresql_data_root: "/media/postgres/postgres_data"
 spotweb_db_user_password: "spotweb"
 spotweb_port: 58080

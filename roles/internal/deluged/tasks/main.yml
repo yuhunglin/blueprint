@@ -10,20 +10,33 @@
     - deluge-web
 
 - name: Install deluged systemd service
-  copy: src=deluged.service dest=/etc/systemd/system/deluged.service mode=0755
+  copy:
+    src: deluged.service
+    dest: /etc/systemd/system/deluged.service
+    mode: 0755
 
 - name: Stop deluged service to install config files
   service: name=deluge-web state=stopped
   ignore_errors: yes
 
 - name: setup deluged work directories
-  file: path={{ item }} state=directory owner=deluged
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: deluged
+    group: "{{ deluged_group }}"
+    mode: 0770
   with_items:
     - "{{ deluged_download_path }}"
     - "{{ deluged_torrent_files_path }}"
 
 - name: setup public completed directories
-  file: path={{ item }} state=directory owner={{ ansible_user }} mode=0777
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ deluged_group }}"
+    mode: 0775
   with_items:
     - "{{ deluged_completed_path }}"
 
@@ -40,3 +53,11 @@
   notify:
     - reload systemd
     - restart deluge-web
+
+- name: Cronjob to fix file permissions in completed folder every 10 minutes
+  cron:
+    name: "fix completed permissions"
+    minute: "*/10"
+    job: "chown -R {{ ansible_user }}:downloaders {{ deluged_completed_path }} && chmod -R 770 {{ deluged_completed_path }}/*"
+
+

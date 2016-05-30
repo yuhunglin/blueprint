@@ -1,6 +1,3 @@
 ---
 - include: packages.yml
-# Best way to automate the setup is to probably restore from a db snapshot dump unfortunately
-# - psql -d spotweb -f spotweb20160507.sql
-# - pg_dump -v -U postgres spotweb > spotweb20160508.sql
 - include: cron.yml
