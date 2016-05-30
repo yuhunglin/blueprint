@@ -1,0 +1,19 @@
+[Unit]
+Description=HTPC-Manager Daemon
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=htpc-manager
+Group=htpc-manager
+UMask=007
+
+ExecStart=/usr/bin/python2.7 {{ htpc_manager_home_dir }}/Htpc.py --port {{ htpc_manager_host_port }}
+Restart=on-failure
+
+# Configures the time to wait before service is stopped forcefully.
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

@@ -25,4 +25,7 @@
 - What's a good strategy to deal with vars needed in meta dependencies?
 - https://tensile-runway-92512.appspot.com to refresh token
 - deal with shifting plex media version
-- Spotweb: best way to restore is to just let the retrieval run (maybe without ssl) instead of trying to restore the db
+- Spotweb: best way to restore is to just let the retrieval run (maybe without ssl) instead of trying to restore the db.
+  - And unfortunately disable ssl
+- Figure out ways to routinely backup sickrage
+- look into sonarr if sickrage is crapping out

@@ -11,7 +11,7 @@ dependencies:
         {
           name: "sickrage",
           groups: ["downloaders"],
-          home: "/home/deluged",
+          home: "/home/sickrage",
           ssh_keys: [],
           system: yes
         }

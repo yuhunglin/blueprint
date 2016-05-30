@@ -1,0 +1,8 @@
+---
+- name: reload systemd
+  shell: systemctl daemon-reload
+  when: htpc_manager_service.changed
+
+- name: restart htpc-manager
+  service: name=htpc-manager.service enabled=yes state=restarted
+

@@ -1,0 +1,14 @@
+---
+dependencies:
+  - {
+      role: ANXS.generic-users,
+      genericusers_users: [
+        {
+          name: "htpc-manager",
+          groups: [],
+          home: "/home/htpc-manager",
+          ssh_keys: [],
+          system: yes
+        }
+      ]
+    }

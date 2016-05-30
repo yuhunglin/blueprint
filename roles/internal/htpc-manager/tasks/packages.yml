@@ -1,0 +1,19 @@
+- name: Install required packages
+  apt: pkg={{ item }} state=latest force=yes
+  with_items:
+    - git
+    - python-pil
+    - python-psutil
+
+- name: Clone htpc-manager from github
+  git:
+    repo: "https://github.com/styxit/HTPC-Manager.git"
+    dest: "{{ htpc_manager_home_dir }}"
+
+- name: Fix file ownership
+  file:
+    path: "{{ htpc_manager_home_dir }}"
+    owner: "htpc-manager"
+    group: "htpc-manager"
+    recurse: yes
+

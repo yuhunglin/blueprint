@@ -1,0 +1,28 @@
+---
+- include: packages.yml
+
+- name: Stub userdata
+  file:
+    path: "{{ htpc_manager_home_dir }}/userdata"
+    state: "directory"
+    owner: "htpc-manager"
+    group: "htpc-manager"
+    mode: 0755
+
+- name: Restore db snapshot
+  copy:
+    src: "database.db"
+    dest: "{{ htpc_manager_home_dir }}/userdata/database.db"
+    owner: "htpc-manager"
+    group: "htpc-manager"
+    mode: 0755
+
+- name: Install service
+  template:
+    src: htpc-manager.service.j2
+    dest: /etc/systemd/system/htpc-manager.service
+    mode: 0644
+  register: htpc_manager_service
+  notify:
+    - reload systemd
+    - restart htpc-manager
