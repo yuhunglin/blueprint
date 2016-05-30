@@ -1,0 +1,19 @@
+[Unit]
+Description=Couchpotato Daemon
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=couchpotato
+Group=couchpotato
+UMask=007
+
+ExecStart=/usr/bin/python2.7 {{ couchpotato_home_dir }}/CouchPotato.py --console_log --config_file {{ couchpotato_home_dir }}/settings.conf --data_dir {{ couchpotato_home_dir }}/data
+Restart=on-failure
+
+# Configures the time to wait before service is stopped forcefully.
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

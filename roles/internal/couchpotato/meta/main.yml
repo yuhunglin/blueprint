@@ -1,0 +1,19 @@
+---
+dependencies:
+  - {
+      role: ANXS.generic-users,
+      genericusers_groups: [
+        {
+          name: "downloaders"
+        }
+      ],
+      genericusers_users: [
+        {
+          name: "couchpotato",
+          groups: ["downloaders"],
+          home: "/home/couchpotato",
+          ssh_keys: [],
+          system: yes
+        }
+      ]
+    }

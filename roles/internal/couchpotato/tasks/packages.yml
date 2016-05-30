@@ -1,0 +1,21 @@
+- name: Install required packages
+  apt: pkg={{ item }} state=latest force=yes
+  with_items:
+    - git
+    - python-lxml
+
+- name: Install pyopenssl via pip
+  pip: name=pyopenssl
+
+- name: Clone couchpotato from github
+  git:
+    repo: "https://github.com/CouchPotato/CouchPotatoServer.git"
+    dest: "{{ couchpotato_home_dir }}"
+
+- name: Fix file ownership
+  file:
+    path: "{{ couchpotato_home_dir }}"
+    owner: "couchpotato"
+    group: "couchpotato"
+    recurse: yes
+
