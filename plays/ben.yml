@@ -18,6 +18,6 @@
     #- { role: spotweb, tags: ["downloader"] }
     #- { role: sickrage, tags: ["media"] }
     #- { role: htpc-manager, tags: ["media"] }
-    - { role: couchpotato, tags: ["media"] }
-    #- { role: headphones,          tags: ["media"] }
+    #- { role: couchpotato, tags: ["media"] }
+    - { role: headphones, tags: ["media"] }
     - { role: ANXS.hostname, tags: ["common"] }

@@ -1,0 +1,19 @@
+[Unit]
+Description=Headphones Daemon
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=headphones
+Group=downloaders
+UMask=007
+
+ExecStart=/usr/bin/python2.7 {{ headphones_home_dir }}/Headphones.py -p {{ headphones_host_port }} --config {{ headphones_home_dir }}/headphones.ini --nolaunch
+Restart=on-failure
+
+# Configures the time to wait before service is stopped forcefully.
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

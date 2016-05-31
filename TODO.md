@@ -29,4 +29,5 @@
   - And unfortunately disable ssl
 - Figure out ways to routinely backup sickrage
 - look into sonarr if sickrage is crapping out
-- crontabs on hedonism to fix folder permission after moving completed items from sickrage and couchpotato
+- crontabs on hedonism to fix folder permission after moving completed items from sickrage, couchpotato, headphones
+- might want to backup and restore the finicky headphones.db as well

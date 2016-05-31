@@ -1,0 +1,17 @@
+- name: Install required packages
+  apt: pkg={{ item }} state=latest force=yes
+  with_items:
+    - git
+
+- name: Clone htpc-manager from github
+  git:
+    repo: "https://github.com/rembo10/headphones"
+    dest: "{{ headphones_home_dir }}"
+
+- name: Fix file ownership
+  file:
+    path: "{{ headphones_home_dir }}"
+    owner: "headphones"
+    group: "headphones"
+    recurse: yes
+

@@ -1,0 +1,28 @@
+---
+- include: packages.yml
+
+- name: Copy headphones.ini snapshot
+  copy:
+    src: "headphones.ini"
+    dest: "{{ headphones_home_dir }}/headphones.ini"
+    owner: "headphones"
+    group: "headphones"
+    mode: 0755
+
+- name: Copy headphones.db snapshot
+  copy:
+    src: "headphones.db"
+    dest: "{{ headphones_home_dir }}/headphones.ini"
+    owner: "headphones"
+    group: "headphones"
+    mode: 0755
+
+- name: Install service
+  template:
+    src: headphones.service.j2
+    dest: /etc/systemd/system/headphones.service
+    mode: 0644
+  register: headphones_service
+  notify:
+    - reload systemd
+    - restart headphones
